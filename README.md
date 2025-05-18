@@ -1,4 +1,5 @@
 ## Descripcion General del Sistema
+
 Este proyecto corresponde a el diagramado de un programa para la digitalizacion de turnos en entornos de atencion al publico, optimizando flujos operativos mediante automatizacion de asignacion y notificacion de turnos y escalabilidad para multiples sucursales y servicios
 ---
 ## Objtivos del Modelado
@@ -17,13 +18,13 @@ Este proyecto corresponde a el diagramado de un programa para la digitalizacion 
 **Administrador**: configura servicios, genera reportes y gestiona parametros globales
 **Sistema Externo** sincroniza datos con sistemas externos
 
-####Casos de uso destacado####
+#### Casos de uso destacado####
 - **Sacar turno**: `<<extend>> Promocion especial` las promociones son opcionales y con condicioneles a fechas/campañas
 - **Consultar Turno**: `<<inclide>> autenticar usuario` la autenticacion es obligatoria para acceder a datos privados
 - **Generar reportes**: `<<include>> exporter PDF` todo reporte requiere conversion a fromato PDF
 - **Sincronizar datos**: `<<SistemaExterno --> Sincronizar datos>>`  comunicacion directa con sistemas externos
 
-####Justificacion Relaciones####
+#### Justificacion Relaciones####
 - `<<include>>` para flujos obligatorios en este caso autenticar usuario ya que es obligatorio para la seguridad del sistema
 -  `<<extend>>` para funcionelidades condicioneles en este caso para promociones en fechas especiales
 
@@ -46,11 +47,11 @@ Este proyecto corresponde a el diagramado de un programa para la digitalizacion 
 
 
 - Nodos fisicos:
-- - Servicio Central: hostea `FabricaTurnos` (Singleton) y CoordinadorTurnos
+  - Servicio Central: hostea `FabricaTurnos` (Singleton) y CoordinadorTurnos
   - Dispositivos Cliente: interfaz adapter (Bridge) para movil/web/pantallas fisicas
   - Servidor de integracion: aisla conexiones con sistemas externos
 - Seguridad:
-- - Autenticacion obligatoria en la consulta de datos
+  - Autenticacion obligatoria en la consulta de datos
 
 ---
 
